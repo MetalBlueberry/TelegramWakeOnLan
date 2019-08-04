@@ -1,0 +1,12 @@
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
+github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
+github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
+github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/sabhiram/go-wol v0.0.0-20190608230442-1f746af28fd4 h1:8HwQkDPXtw+RkVVjLrkhi38BdY0XmN8HbxF+K0p6VJg=
+github.com/sabhiram/go-wol v0.0.0-20190608230442-1f746af28fd4/go.mod h1:AffUstocTLVvn70vkOhskhHqSg6jLiJpOlnC8o74ATM=
+github.com/stretchr/testify v1.2.2 h1:bSDNvY7ZPG5RlJ8otE/7V6gMiyenm9RtJ7IUVIAoJ1w=
+github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
+gopkg.in/tucnak/telebot.v2 v2.0.0-20190415090633-8c1c512262f2 h1:wGFU+pn16CuaCt4lc9gkdF1R/y4M8CRi4g6yj7pxpBE=
+gopkg.in/tucnak/telebot.v2 v2.0.0-20190415090633-8c1c512262f2/go.mod h1:+//wyPtHTeW2kfyEBwB05Hqnxev7AGrsLIyylSH++KU=
