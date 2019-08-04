@@ -9,6 +9,7 @@ import (
 	"log"
 	"net"
 	"os"
+	"strings"
 	"time"
 
 	wol "github.com/sabhiram/go-wol"
@@ -45,7 +46,7 @@ func (l LogToTelegram) Write(p []byte) (int, error) {
 	return len(p), err
 }
 
-func (w WakeOnLan) ipFromInterface() (*net.UDPAddr, error) {
+func (w WakeOnLan) IpFromInterface() (*net.UDPAddr, error) {
 	ief, err := net.InterfaceByName(w.bcastInterface)
 	if err != nil {
 		return nil, err
@@ -95,7 +96,7 @@ func (w WakeOnLan) Wake() (err error) {
 	// been set.
 	var localAddr *net.UDPAddr
 	if w.bcastInterface != "" {
-		localAddr, err = w.ipFromInterface()
+		localAddr, err = w.IpFromInterface()
 		if err != nil {
 			return err
 		}
@@ -183,6 +184,22 @@ func main() {
 			b.Send(m.Sender, "Wops! something went wrong...")
 			log.Println(err)
 		}
+	})
+	b.Handle("/list", func(m *tb.Message) {
+		b.Send(m.Sender, "Scanning for computers")
+		ifaceIP, err := wol.IpFromInterface()
+		if err != nil {
+			log.Println(err)
+		}
+		log.Println(ifaceIP)
+		ip := ifaceIP.IP.Mask(ifaceIP.IP.DefaultMask())
+		out, err := NewNmapRun(ip.String())
+		if err != nil {
+			log.Println(err)
+		}
+		addresses := out.GetAddressList()
+		log.Println(strings.Join(addresses, "\n"))
+		b.Send(m.Sender, "These are the computers that I've found in local network \n"+strings.Join(addresses, "\n"))
 	})
 
 	log.Println("Bot ready")
