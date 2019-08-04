@@ -193,6 +193,7 @@ func main() {
 		}
 		log.Println(ifaceIP)
 		ip := ifaceIP.IP.Mask(ifaceIP.IP.DefaultMask())
+		log.Println(ip)
 		out, err := NewNmapRun(ip.String())
 		if err != nil {
 			log.Println(err)
